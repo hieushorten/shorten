@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  
+<head>
+    <title>
+        Chia sẻ câu truyện của bạn trên Hiếu's Diary
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Share link cho Hiếu's Diary" />
+    <meta name="author" content="Hiếu Deeptry" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/imagestorage/HieuArticle_Storage/main/fullyground.jpg"/>
+</head>
+  
+<body>
+    Wait a sec...
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+        setTimeout(function(){
+            if (getUrlParameter('url')){
+                window.location.href = decodeURIComponent(getUrlParameter('url'))
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
