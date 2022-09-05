@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+  
+<head>
+    <title>
+        Tin tức trên Hiếu's Diary
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Share link cho Hiếu's Diary" />
+    <meta name="author" content="Hiếu Deeptry" />
+    <meta property="og:url"                content="https://hieushorten.github.io/shorten/verified" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Tin tức trên Hiếu's Diary" />
+    <meta property="og:description"        content="Share link cho Hiếu's Diary" />
+    <meta property="fb:app_id"        content="2190926787728969" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/imagestorage/HieuArticle_Storage/main/fullyground.jpg"/>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.v2.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Header-->
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">Hieu's diary</h1>
+            <h3 class="mb-5"><em>Đọc tin tức trên Hiếu's Diary</em></h3>
+            <button type="button" class="btn btn-primary btn-xl" onclick="direct();" id="continue">Nhấn vào đây để tiếp tục</button>
+        </div>
+    </header>
+    
+    <!-- Footer-->
+    <section id="contact">
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="https://fb.com/py.hacker.hieu"><i class="icon-social-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="https://github.com/MHP0920"><i class="icon-social-github"></i></a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; MHP 2022</p>
+        </div>
+    </footer>
+    </section>
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+        function direct() {
+            const button = document.getElementById("continue")
+            button.innerHTML = 'Đang chuyển hướng cho bạn...';
+            button.disabled = true;
+            setTimeout(function(){
+            if (getUrlParameter('url')){
+                window.location.href = decodeURIComponent(getUrlParameter('url'))
+            }
+            else {
+                window.location.href = 'https://article.hieudeeptry.ml'
+            }
+        }, 1000);
+        }
+        
+    </script>
+</body>
+</html>
